@@ -88,13 +88,13 @@ renderImg();
         liEl=document.createElement('li');
         ulEl.appendChild(liEl)
         liEl.textContent = `${products[i].productName} has ${products[i].views} views and has ${products[i].clicks} clicks.`
+       
     }
+    buttonEl.addEventListener('click', handelClicks);
     lftImgEl.removeEventListener('click', handelClicks);
     mdltImgEl.removeEventListener('click', handelClicks);
     rghtImgEl.removeEventListener('click', handelClicks);
-   // button.addEventListener('click', handelClicks);
-
-
+   
 }
 }
 
