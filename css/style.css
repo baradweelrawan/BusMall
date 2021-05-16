@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  h1 {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 40px;
+    margin-top: 20px;
+  }
+p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+  img {
+    display: block;
+    width: 150px;
+    float: left;
+    height: 150px;
+    border: 2px solid lightblue;
+  }
+  #image-container {
+    padding-left: 200px;
+    border: 2px solid black;
+    width: 800px;
+    margin: 0 auto;
+    height:350px;
+  }
+  #leftImg,#middleImg,
+  #rightImg {
+    width: 200px;
+    margin: 10px;
+    border-radius: 50px;
+  }
+  span {
+    margin-left: 50px;
+  }
+  #attempts {
+    margin-left: 20px;
+    font-size: 30px;
+  }
+
+#rslt {
+    margin-left:50px;
+    margin-top:50px;
+    margin-bottom: 500px;
+    border-radius: 5px;
+}  
