@@ -40,7 +40,7 @@ function renderImg(){
     middleImgIndex=generateImg();
     rightImgIndex=generateImg();
 
- while (leftImgIndex === middleImgIndex && leftImgIndex===rightImgIndex ) {
+ while (leftImgIndex === middleImgIndex || leftImgIndex===rightImgIndex ) {
     leftImgIndex=generateImg();
  }  
  lftImgEl.setAttribute('src',products[leftImgIndex].source);
@@ -79,10 +79,10 @@ function handelClicks(event){
 renderImg();
 
 }else {
-    
-    let buttonEl=document.getElementById('rslt')
-    let ulEl=document.createElement('results')
-    buttonEl.appendChild(ulEl)
+   
+    let buttonEl=document.getElementById('rslt');
+    let ulEl=document.createElement('results');
+    buttonEl.appendChild(ulEl);
     let liEl;
     for (let i=0; i<products.length ;i++ ){
         liEl=document.createElement('li');
@@ -92,6 +92,8 @@ renderImg();
     lftImgEl.removeEventListener('click', handelClicks);
     mdltImgEl.removeEventListener('click', handelClicks);
     rghtImgEl.removeEventListener('click', handelClicks);
+   // button.addEventListener('click', handelClicks);
+
 
 }
 }
