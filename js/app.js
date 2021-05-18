@@ -17,7 +17,7 @@ function productsImg(productName){
     products.push(this);
     productsImgsNames.push(this.productName);
     //firstIteration.push(this.source);
-   
+    //settingproducts();
 
 }
 let productsImags=['bag.jpg','banana.jpg','bathroom.jpg','boots.jpg','boots.jpg','breakfast.jpg',
@@ -43,6 +43,34 @@ let leftImgIndex;
 let middleImgIndex;
 let rightImgIndex;
 
+function settingproducts(){
+   
+    let data = JSON.stringify(products)
+    //console.log(data);
+    //for(let i=0 ; i<=maxAttempts ; i++){
+       // data[i]=productsClickes;
+       //data[i]=productsViews;
+
+        localStorage.setItem('productsImg',data)
+    
+    
+}
+
+function gettingproducts(){
+   
+       let stringproduct = localStorage.getItem('productsImg')
+       let normalproduct = JSON.parse(stringproduct)
+       //for(let i=0 ; i<=maxAttempts ; i++){
+         //stringproduct[i]=products;
+        // stringproduct[i]=productsViews;
+              if (normalproduct !== null){
+                products = normalproduct ;
+    }
+   
+    renderImg()
+}
+
+
 function renderImg(){
     leftImgIndex=generateImg();
     middleImgIndex=generateImg();
@@ -52,29 +80,15 @@ function renderImg(){
     leftImgIndex=generateImg();
     rightImgIndex=generateImg();
     middleImgIndex=generateImg();
-
-
     //firstIteration.push(Math.floor(Math.random()*products.length));
     //for (let i= 0 ; i<= productsImags.length ;i++ )
     //if (firstIteration)
-    
-     
+   
 }
 firstIteration[0]=leftImgIndex;
 firstIteration[1]=middleImgIndex;
 firstIteration[2]=rightImgIndex;
 console.log(firstIteration);
-//console.log(firstIteration.includes(leftImgIndex));
-
-
-
-/*
-firstIteration.includes(leftImgIndex,middleImgIndex,rightImgIndex);
-firstIteration[0]=leftImgIndex;
-firstIteration.push(rightImgIndex);
-firstIteration.push(middleImgIndex);
-firstIteration=[];
-*/
 
 
  lftImgEl.setAttribute('src',products[leftImgIndex].source);
@@ -97,6 +111,8 @@ mdltImgEl.addEventListener('click',handelClicks);
 rghtImgEl.addEventListener('click',handelClicks);
 //buttonEl.addEventListener('click',handelClicks);
 
+
+
 function handelClicks(event){
     attempts ++;
     if (attempts <= maxAttempts ){
@@ -112,7 +128,6 @@ function handelClicks(event){
         products[rightImgIndex].clicks++;
 }
 renderImg();
-
 }else {
    
     let buttonEl=document.getElementById('rslt');
@@ -131,10 +146,13 @@ renderImg();
     lftImgEl.removeEventListener('click', handelClicks);
     mdltImgEl.removeEventListener('click', handelClicks);
     rghtImgEl.removeEventListener('click', handelClicks);
+    settingproducts();
     chartRender();
    
 }
 }
+
+
 
 function chartRender(){
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -181,6 +199,8 @@ function chartRender(){
 });
 
 }
+//results.addEventListener('rslt',handelClicks);
+gettingproducts();
 
 
 
