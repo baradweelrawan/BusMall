@@ -1,14 +1,19 @@
 * {
     box-sizing: border-box;
   }
+  body{
+    background-color: rgb(130, 190, 170);
+    
+  }
   h1 {
     text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+   /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;*/
     font-size: 40px;
     margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
   }
 p{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 20px;
     text-align: center;
     padding-top: 10px;
@@ -36,6 +41,8 @@ p{
   }
   span {
     margin-left: 50px;
+    font-family: fantasy;
+    font-size: medium;
   }
   #attempts {
     margin-left: 20px;
@@ -48,3 +55,28 @@ p{
     margin-bottom: 500px;
     border-radius: 5px;
 }  
+
+@keyframes images {
+  from {background-color: rgb(130, 190, 170);}
+  to {background-color: rgb(15, 15, 15);}
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(4, 29, 99);
+  animation-name: images;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
